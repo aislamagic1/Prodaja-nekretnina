@@ -1,0 +1,20 @@
+html{
+    background-color: #fdf1d3;
+}
+
+ul{
+    text-align: center;
+    list-style: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+li{
+    display: inline;
+    padding: 10px;
+}
+
+.link:hover{
+    color: #ff9900;
+}
