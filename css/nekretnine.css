@@ -1,0 +1,24 @@
+#wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#stan{
+    background-color: white;
+}
+
+#kuca{
+    background-color: powderblue;
+}
+
+#pp{
+    background-color: green;
+}
+
+.nazivNekretnine, .kvadratura{
+    text-align: left
+}
+
+.cijena{
+    text-align: right;
+}
