@@ -1,6 +1,12 @@
+html{
+    background-color: #fdf1d3;
+}
+
 #wrapper{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    max-width: 1080px;
 }
 
 #stan{
@@ -21,4 +27,13 @@
 
 .cijena{
     text-align: right;
+}
+
+img{
+    width: 300px;
+    height: 200px;
+}
+
+.detaljiDugme{
+    text-align: center;
 }
