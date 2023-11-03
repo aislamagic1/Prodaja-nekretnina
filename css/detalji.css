@@ -8,13 +8,32 @@ img{
     width: 800px;
 }
 
-div{
+#osnovno{
     padding: 10px 0;
 }
 
-#tabelaDetalja, tr, th{
+#tabelaDetalja, th{
     text-align: left;
     border-collapse: collapse;
-    width: 1000px;
+    width: 800px;
+    font-weight: normal;
 }
 
+
+.kolona-za-padding{
+    padding-bottom: 30px;
+}
+
+#vertical-list{
+    padding: 0;
+    border: 0;
+}
+
+#vertical-list ul, li{
+    list-style: none;
+    border: 1px solid black;
+    width: 800px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: white;
+}
