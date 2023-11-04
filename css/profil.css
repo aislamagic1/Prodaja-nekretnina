@@ -1,0 +1,30 @@
+html{
+    background-color: #fdf1d3;
+    margin: 35px 10px;
+}
+
+#profilna-slika{
+    width: 250px;
+    height: 150px;
+    padding-bottom: 10px;
+}
+
+input[type=text]{
+    border: 1px hidden black;
+    padding: 8px 0;
+    box-shadow: 1px 1px lightgray;
+    vertical-align: right;
+    padding-left: 10px;
+    color: #999
+}
+
+#formular label{
+    padding-bottom: 30px;
+    width: 150px;
+    text-align: left;
+    display: inline-block;
+}
+
+.form-row{
+    margin-bottom: 20px;
+}
