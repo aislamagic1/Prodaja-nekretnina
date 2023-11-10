@@ -3,14 +3,6 @@ html{
     margin: 0px 10px;
 }
 
-#meni{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 40px;
-    border: 0px;
-}
-
 #profilna-slika{
     width: 250px;
     height: 150px;
