@@ -1,0 +1,17 @@
+HTML validator: The W3C Markup Validation service
+URL: https://validator.w3.org/
+Error:
+-2 error-a u nekretnine.html:
+    1. Error: Duplicate ID pp.
+        From line 43, column 13; to line 43, column 25
+        <div id="pp">↩ 
+        Error: Duplicate ID pp
+    2. Error: Duplicate ID pp.
+        From line 53, column 13; to line 53, column 25
+        <div id="pp">↩     
+
+CSS validator: The W3C CSS Validation service
+URL: https://jigsaw.w3.org/css-validator/
+Error:
+-1 error u profil.css:
+    input[type="text"]	Value Error : vertical-align right is not a vertical-align value : right
