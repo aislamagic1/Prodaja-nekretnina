@@ -2,11 +2,17 @@ html{
     margin: 0px 10px;
 }
 
+#wrapper{
+    display: grid;
+    margin-top: 60px;
+    grid-template-columns: repeat(auto-fill, minmax(227px, 1fr));
+    gap: 10px;
+}
+
 #profilna-slika{
-    width: 250px;
-    height: 150px;
-    padding-bottom: 10px;
-    margin-top: 50px;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
 }
 
 input[type=text]{
@@ -15,13 +21,15 @@ input[type=text]{
     box-shadow: 1px 1px lightgray;
     vertical-align: top;
     padding-left: 10px;
+    width: 100px;
     color: #999
 }
 
 #formular label{
     padding-bottom: 30px;
-    width: 150px;
+    width: 100px;
     text-align: left;
+    height: 40px;
     display: inline-block;
 }
 

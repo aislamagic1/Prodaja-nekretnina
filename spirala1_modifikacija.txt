@@ -1,0 +1,10 @@
+Za modifikiaciju zadatka sam koristio grid layout.
+Prvo je bilo potrebno u html-u staviti sliku i formu u posebne div elemente koji se nalaze u
+zajedničkom div elementu. U css-u je za zajednički div (id=wrapper) dodana deklaracija display:grid
+i grid-template-columns: repeat(auto-fill, minmax(227px, 1fr)); koja osigurava da svaka kolona
+grid layout-a može biti minimalno 227px široka(stavljeno je 227px kako bi se tačno na 500px širine
+ekrana desila promjena zbog toga što su korišteni razmaci između elemenata), te ukoliko ima slobodnog
+prostora elementi grida su raspoređeni jednako.
+Također je osigurano da je širina slike i formulara unutar granica kolona u svakom trenutku, kako 
+se raspored formulara ne bi promjenio.
+Urađena je i validacija html i css datoteke i nije bilo grešaka.
