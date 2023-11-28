@@ -9,15 +9,15 @@ h2{
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
-#stan-bc{
+.stan-bc{
     background-color: white;
 }
 
-#kuca-bc{
+.kuca-bc{
     background-color: powderblue;
 }
 
-#pp-bc{
+.pp-bc{
     background-color: green;
 }
 

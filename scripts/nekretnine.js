@@ -11,7 +11,7 @@ function spojiNekretnine(divReferenca, instancaModula, tip_nekretnine) {
     }
     for(let key of spisakNekretnina){
         divReferenca.innerHTML += `
-        <div id="${tipNekretnine}">
+        <div class="${tipNekretnine}">
             <img src="" alt="Slika" /><br>
             <p class="nazivNekretnine">Naziv nekretine: ${key["naziv"]}</p>
             <p class="kvadratura">Kvadratura: ${key["kvadratura"]}</p>
