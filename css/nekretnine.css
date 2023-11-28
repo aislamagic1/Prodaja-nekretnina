@@ -1,19 +1,23 @@
-#wrapper{
+h2{
+    margin-top: 60px;
+}
+
+#stan, #kuca, #pp{
     margin-top: 60px;
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
-#stan{
+#stan-bc{
     background-color: white;
 }
 
-#kuca{
+#kuca-bc{
     background-color: powderblue;
 }
 
-#pp{
+#pp-bc{
     background-color: green;
 }
 
