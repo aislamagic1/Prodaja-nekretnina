@@ -15,23 +15,23 @@ app.use(session({
 
 app.use(express.static('public'));
 
-app.get('/detalji.html', (err,res) =>{
-    res.sendFile('/public/html/detalji.html', {root: __dirname, logedIn: req.session.username != null });
+app.get('/detalji.html', (req,res) =>{
+    res.sendFile('/public/html/detalji.html', {root: __dirname });
 });
 
-app.get('/meni.html', (err,res) =>{
+app.get('/meni.html', (req,res) =>{
     res.sendFile('/public/html/meni.html', {root: __dirname });
 });
 
-app.get('/nekretnine.html', (err,res) =>{
+app.get('/nekretnine.html', (req,res) =>{
     res.sendFile('/public/html/nekretnine.html', {root: __dirname });
 });
 
-app.get('/prijava.html', (err,res) =>{
+app.get('/prijava.html', (req,res) =>{
     res.sendFile('/public/html/prijava.html', {root: __dirname });
 });
 
-app.get('/profil.html', (err,res) =>{
+app.get('/profil.html', (req,res) =>{
     res.sendFile('/public/html/profil.html', {root: __dirname });
 });
 
