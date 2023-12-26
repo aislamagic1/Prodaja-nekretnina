@@ -81,11 +81,41 @@ const PoziviAjax = (() => {
     }
 
     function impl_postLogin(username, password, fnCallback) {
-
+        const korisnikPodaci = {
+            username : username,
+            password : password
+        };
+        let ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = () =>{
+            if(ajax.readyState == 4){
+                if(ajax.status == 200){
+                    fnCallback(null, korisnikPodaci);
+                }else{
+                    fnCallback(ajax.status, null);
+                }
+            }
+        }
+        ajax.open("POST", "http://localhost:3000/login", true);
+        ajax.setRequestHeader("Content-Type", "application/json");
+        ajax.withCredentials = true;
+        ajax.send(JSON.stringify(korisnikPodaci));
     }
 
     function impl_postLogout(fnCallback) {
-
+        let ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = () =>{
+            if(ajax.readyState == 4){
+                if(ajax.status == 200){
+                    fnCallback(null, null);
+                }else{
+                    fnCallback(ajax.status, null);
+                }
+            }
+        }
+        ajax.open("POST", "http://localhost:3000/login", true);
+        ajax.setRequestHeader("Content-Type", "application/json");
+        ajax.withCredentials = true;
+        ajax.send();
     }
 
     return {
