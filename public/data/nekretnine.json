@@ -37,8 +37,8 @@
     "id": 2,
     "tip_nekretnine": "Poslovni prostor",
     "naziv": "Mali poslovni prostor",
-    "kvadratura": 20,
-    "cijena": 70000,
+    "kvadratura": 50,
+    "cijena": 50000,
     "tip_grijanja": "struja",
     "lokacija": "Centar",
     "godina_izgradnje": 2005,
@@ -55,8 +55,44 @@
     "id": 3,
     "tip_nekretnine": "Kuća",
     "naziv": "Kuca",
-    "kvadratura": 20,
+    "kvadratura": 13,
+    "cijena": 90000,
+    "tip_grijanja": "struja",
+    "lokacija": "Centar",
+    "godina_izgradnje": 2005,
+    "datum_objave": "20.08.2023.",
+    "opis": "Magnis dis parturient montes.",
+    "upiti": [
+      {
+        "korisnik_id": 2,
+        "tekst_upita": "Integer tincidunt."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "tip_nekretnine": "Kuća",
+    "naziv": "Kuca2",
+    "kvadratura": 120,
     "cijena": 70000,
+    "tip_grijanja": "struja",
+    "lokacija": "Centar",
+    "godina_izgradnje": 2005,
+    "datum_objave": "20.08.2023.",
+    "opis": "Magnis dis parturient montes.",
+    "upiti": [
+      {
+        "korisnik_id": 2,
+        "tekst_upita": "Integer tincidunt."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "tip_nekretnine": "Kuća",
+    "naziv": "Kuca3",
+    "kvadratura": 60,
+    "cijena": 80000,
     "tip_grijanja": "struja",
     "lokacija": "Centar",
     "godina_izgradnje": 2005,

@@ -1,5 +1,9 @@
-h2{
+.filtriranje-form{
     margin-top: 60px;
+}
+
+h2{
+    margin-top: 20px;
 }
 
 #stan, #kuca, #pp{

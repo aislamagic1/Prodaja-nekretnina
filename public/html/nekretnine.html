@@ -8,22 +8,30 @@
         <link href="../css/common.css" rel="stylesheet">
     </head>
     <body>
-        <div id="container">
-            <iframe src="meni.html" id="meni"></iframe>
-            <h2>Stan</h2>
-            <div id="stan">
-            </div>
-                <h2>Kuća</h2>
-                <div id="kuca">
-            </div>
+        <iframe src="meni.html" id="meni"></iframe>
 
-            <h2>Poslovni prostor</h2>
-            <div id="pp">
+        <form class="filtriranje-form"> 
+            <input type="number" placeholder="Minimalna cijena" id="min_cijena"/> 
+            <input type="number" placeholder="Maksimalna cijena" id="max_cijena"/> 
+            <input type="number" placeholder="Minimalna kvadratura" id="min_kv"/> 
+            <input type="number" placeholder="Maksimalna kvadratura" id="max_kv"/> 
+            <button type="button" onclick="filtriranjeClick()">Filtriraj</button> 
+        </form>
 
-            </div>
-            <script src="../scripts/PoziviAjax.js"></script>
-            <script src="../scripts/SpisakNekretnina.js"></script>
-            <script src="../scripts/nekretnine.js"></script>
+        <h2>Stan</h2>
+        <div id="stan">
         </div>
+
+        <h2>Kuća</h2>
+        <div id="kuca">
+        </div>
+
+        <h2>Poslovni prostor</h2>
+        <div id="pp">
+
+        </div>
+        <script src="../scripts/PoziviAjax.js"></script>
+        <script src="../scripts/SpisakNekretnina.js"></script>
+        <script src="../scripts/nekretnine.js"></script>
     </body>
 </html>
