@@ -5,14 +5,15 @@
         <meta name="viewport" content="width=device-width" />
         <title>Meni</title>
         <link href="../css/meni.css" rel="stylesheet">
-        <script src="../loginAjax.js"></script>
+        <script src="../scripts/PoziviAjax.js"></script>
+        <script src="../scripts/updateMeni.js"></script>
     </head>
     <body>
         <ul>
             <li> <a class="link" href="http://localhost:3000/profil.html" target="_top">Profil</a> </li>
             <li> <a class="link" href="http://localhost:3000/nekretnine.html" target="_top">Nekretnine</a> </li>
             <li> <a class="link" href="http://localhost:3000/detalji.html" target="_top">Detalji</a> </li>
-            <li> <a class="link" href="http://localhost:3000/prijava.html" target="_top" id="prijava">Prijava</a> </li>
+            <li> <a class="link" href="http://localhost:3000/prijava.html" target="_top" id="prijava" onclick="odjavaLink()">Prijava</a> </li>
         </ul><br>
     </body>
 </html>

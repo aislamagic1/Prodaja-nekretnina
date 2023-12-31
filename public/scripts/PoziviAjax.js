@@ -16,7 +16,7 @@ const PoziviAjax = (() => {
                 let jsonRez = JSON.parse(ajax.responseText);
                 fnCallback(null, jsonRez);
             } else {
-                fnCallback(ajax.status, null);
+                fnCallback(ajax.statusText, null);
             }
         }
         }
@@ -32,7 +32,7 @@ const PoziviAjax = (() => {
             if(ajax.status == 200){
                 fnCallback(null, {});
             } else {
-                fnCallback(ajax.status, null);
+                fnCallback(ajax.statusText, null);
             }
         }
         ajax.open("PUT", "http://localhost:3000/korisnik", true);
@@ -53,7 +53,7 @@ const PoziviAjax = (() => {
                 if(ajax.status == 200){
                     fnCallback(null, noviPodaci);
                 }else{
-                    fnCallback(ajax.status, null);
+                    fnCallback(ajax.statusText, null);
                 }
             }
         }
@@ -71,7 +71,7 @@ const PoziviAjax = (() => {
                 let jsonRez = JSON.parse(ajax.responseText);
                 fnCallback(null, jsonRez);
             } else {
-                fnCallback(ajax.status, null);
+                fnCallback(ajax.statusText, null);
             }
         }
         }
@@ -91,7 +91,7 @@ const PoziviAjax = (() => {
                 if(ajax.status == 200){
                     fnCallback(null, korisnikPodaci);
                 }else{
-                    fnCallback(ajax.status, null);
+                    fnCallback(ajax.statusText, null);
                 }
             }
         }
@@ -108,11 +108,11 @@ const PoziviAjax = (() => {
                 if(ajax.status == 200){
                     fnCallback(null, null);
                 }else{
-                    fnCallback(ajax.status, null);
+                    fnCallback(ajax.statusText, null);
                 }
             }
         }
-        ajax.open("POST", "http://localhost:3000/login", true);
+        ajax.open("POST", "http://localhost:3000/logout", true);
         ajax.setRequestHeader("Content-Type", "application/json");
         ajax.withCredentials = true;
         ajax.send();
