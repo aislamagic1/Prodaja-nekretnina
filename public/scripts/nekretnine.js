@@ -18,7 +18,7 @@ function spojiNekretnine(divReferenca, instancaModula, kriterij) {
             <p class="kvadratura">Kvadratura: ${key["kvadratura"]}</p>
             <p class="cijena">Cijena: ${key["cijena"]}</p>
             <div class="detaljiDugme">
-                <input type="button" value="Detalji">
+            <input type="button" value="Detalji" onclick="detaljiClick(${key.id})" data-id="${key.id}">
             </div>
         </div>`;
     }
@@ -64,15 +64,29 @@ function filtriranjeClick(){
             console.error("Error:", error);
         } else {
             let listaNekretnina = data;       
+            let spisakFiltriranihNekretnina = [];
             let nekretnine = SpisakNekretnina();
             nekretnine.init(listaNekretnina, []);
             spojiNekretnine(kucaDiv, nekretnine, kriterij);
+            let filtriraneNekretnine1 = nekretnine.filtrirajNekretnine(kriterij);
+
             kriterij["tip_nekretnine"] = "Stan";
             spojiNekretnine(stanDiv, nekretnine, kriterij);
+            let filtriraneNekretnine2 = nekretnine.filtrirajNekretnine(kriterij);
+
             kriterij["tip_nekretnine"] = "Poslovni prostor";
             spojiNekretnine(ppDiv, nekretnine, kriterij);
+            let filtriraneNekretnine3 = nekretnine.filtrirajNekretnine(kriterij);
+
+            spisakFiltriranihNekretnina = filtriraneNekretnine1.concat(filtriraneNekretnine2, filtriraneNekretnine3);
+            
+            MarketingAjax.novoFiltriranje(spisakFiltriranihNekretnina);
         }
     });
+}
+
+function detaljiClick(id){
+    MarketingAjax.klikNekretnina(id);
 }
 
 window.onload = loadNekretnine;

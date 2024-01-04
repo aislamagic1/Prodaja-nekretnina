@@ -1,26 +1,26 @@
 [
   {
-    "nekretnina_id": 1,
+    "nekretnina_id": 3,
     "pregledi": 5,
-    "klikovi": 3
+    "klikovi": 0
+  },
+  {
+    "nekretnina_id": 4,
+    "pregledi": 5,
+    "klikovi": 0
   },
   {
     "nekretnina_id": 5,
-    "pregledi": 4,
+    "pregledi": 5,
     "klikovi": 4
   },
   {
-    "nekretnina_id": 6,
-    "pregledi": 4,
-    "klikovi": 0
+    "nekretnina_id": 1,
+    "pregledi": 5,
+    "klikovi": 2
   },
   {
-    "nekretnina_id": 7,
-    "pregledi": 4,
-    "klikovi": 0
-  },
-  {
-    "nekretnina_id": 12,
+    "nekretnina_id": 2,
     "pregledi": 4,
     "klikovi": 0
   }
