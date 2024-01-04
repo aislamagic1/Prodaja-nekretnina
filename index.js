@@ -142,4 +142,44 @@ app.get('/nekretnine', (req,res) =>{
     });
 });
 
+app.post('/marketing/nekretnine', (req,res) =>{
+    let body = req.body;
+    let nizNekretnina = body.nizNekretnina;
+    fs.readFile('public/data/brojPretragaKlikova.json', 'utf-8', (err,data) =>{
+        let jsonData = JSON.parse(data);
+        for(nekretnina of jsonData){
+            if(nizNekretnina.includes(nekretnina.nekretnina_id)){
+                nekretnina.pregledi++;
+                nizNekretnina = nizNekretnina.filter(id => id !== nekretnina.nekretnina_id);
+            }
+        }
+        for(i in nizNekretnina){
+            let novaNekretnina = {
+                nekretnina_id : nizNekretnina[i],
+                pregledi : 1,
+                klikovi : 0
+            }
+            jsonData.push(novaNekretnina);
+        }
+        fs.writeFile('public/data/brojPretragaKlikova.json', JSON.stringify(jsonData, null, 2), (err) =>{
+            res.status(200).send();
+        });
+    });
+});
+
+app.post('/marketing/nekretnina/:id', (req,res) =>{
+    let id = req.params.id;
+    fs.readFile('public/data/brojPretragaKlikova.json', 'utf-8', (err,data) =>{
+        let jsonData = JSON.parse(data);
+        for(nekretnina of jsonData){
+            if(id == nekretnina.nekretnina_id){
+                nekretnina.klikovi++;
+            }
+        }
+        fs.writeFile('public/data/brojPretragaKlikova.json', JSON.stringify(jsonData, null, 2), (err) =>{
+            res.status(200).send();
+        });
+    });
+});
+
 app.listen(3000);

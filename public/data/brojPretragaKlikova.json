@@ -1,0 +1,27 @@
+[
+  {
+    "nekretnina_id": 1,
+    "pregledi": 5,
+    "klikovi": 3
+  },
+  {
+    "nekretnina_id": 5,
+    "pregledi": 4,
+    "klikovi": 4
+  },
+  {
+    "nekretnina_id": 6,
+    "pregledi": 4,
+    "klikovi": 0
+  },
+  {
+    "nekretnina_id": 7,
+    "pregledi": 4,
+    "klikovi": 0
+  },
+  {
+    "nekretnina_id": 12,
+    "pregledi": 4,
+    "klikovi": 0
+  }
+]
