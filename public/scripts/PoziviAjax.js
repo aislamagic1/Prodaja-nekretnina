@@ -118,13 +118,31 @@ const PoziviAjax = (() => {
         ajax.send();
     }
 
+    function impl_getNekretninaById(nekretnina_id, fnCallback) {
+        let ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = () =>{
+        if(ajax.readyState == 4){
+            if(ajax.status == 200){
+                let jsonRez = JSON.parse(ajax.responseText);
+                fnCallback(null, jsonRez);
+            } else {
+                fnCallback(ajax.statusText, null);
+            }
+        }
+        }
+        ajax.open("GET", `http://localhost:3000/nekretnina/${nekretnina_id}`, true);
+        ajax.withCredentials = true;
+        ajax.send();
+    }
+
     return {
         postLogin: impl_postLogin,
         postLogout: impl_postLogout,
         getKorisnik: impl_getKorisnik,
         putKorisnik: impl_putKorisnik,
         postUpit: impl_postUpit,
-        getNekretnine: impl_getNekretnine
+        getNekretnine: impl_getNekretnine,
+        getNekretninaById: impl_getNekretninaById
     };
 })();
 

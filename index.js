@@ -149,18 +149,40 @@ app.post('/marketing/nekretnina/:id', (req,res) =>{
             res.status(200).send();
         });
     });
-/*
-    fs.readFile('public/data/brojPretragaKlikova.json', 'utf-8', (err,data) =>{
-        let jsonData = JSON.parse(data);
-        for(nekretnina of jsonData){
-            if(id == nekretnina.nekretnina_id){
-                nekretnina.klikovi++;
-            }
+});
+
+app.get('/nekretnina/:id', (req,res) =>{
+    let id_nekretnine = req.params.id;
+    db.nekretnina.findByPk(id_nekretnine).then((nekr) =>{
+        if(nekr){/*
+            nekr.getUpitiNekretnine().then((upiti) =>{
+                db.korisnik.findAll({where:{id}})
+                let rez = { ...nekr.toJSON(), upiti: upiti };
+                res.status(200).json(rez);
+            });*/
+            nekr.getUpitiNekretnine().then((upiti) =>{
+                const fetchUsernames = upiti.map((key) => {
+                    return db.korisnik.findByPk(key.KorisnikId).then((korisnik) => {
+                        if (korisnik && korisnik.username) {
+                            return korisnik.username;
+                        } else {
+                            return null;
+                        }
+                    });
+                });
+
+                Promise.all(fetchUsernames).then((usernames) => {
+                    for (let i = 0; i < upiti.length; i++) {
+                        upiti[i] = { ...upiti[i].toJSON(), username: usernames[i] };
+                    }
+                    let rez = { ...nekr.toJSON(), upiti: upiti };
+                    res.status(200).json(rez);
+                });
+            });
+        }else{
+            res.status(400).json({greska:`Nekretnina sa id-em ${id_nekretnine} ne postoji`});
         }
-        fs.writeFile('public/data/brojPretragaKlikova.json', JSON.stringify(jsonData, null, 2), (err) =>{
-            res.status(200).send();
-        });
-    });*/
+    });
 });
 
 app.listen(3000);

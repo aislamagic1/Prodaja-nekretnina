@@ -20,6 +20,11 @@ function spojiNekretnine(divReferenca, instancaModula, kriterij) {
             <div class="detaljiDugme">
             <input type="button" value="Detalji" onclick="detaljiClick(${key.id})" data-id="${key.id}">
             </div>
+            <div id="otvori-detalje-${key.id}" style="display: none;">
+            <p class="detalji-paragraph">Lokacija: ${key.lokacija}</p>
+            <p class="detalji-paragraph">Godina izgradnje: ${key.godina_izgradnje}</p>
+            <input type="button" value="Otvori detalje" onclick="otvoriDetaljeClick(${key.id})">
+            </div>
         </div>`;
     }
 }
@@ -85,9 +90,34 @@ function filtriranjeClick(){
     });
 }
 
+let currentDetaljiId = null;
+
 function detaljiClick(id){
     MarketingAjax.klikNekretnina(id);
+    let detaljiParagraph = document.getElementById(`otvori-detalje-${id}`);
+
+    if (currentDetaljiId !== null) {
+        let currentDetalji = document.getElementById(`otvori-detalje-${currentDetaljiId}`);
+        currentDetalji.style.display = 'none';
+    }
+
+    if (detaljiParagraph.style.display === 'none' && currentDetaljiId != id) {
+        detaljiParagraph.style.display = 'block';
+    } else {
+        detaljiParagraph.style.display = 'none';
+    }
+
+    if (detaljiParagraph.style.display === 'none') {
+        currentDetaljiId = null;
+    } else {
+        currentDetaljiId = id;
+    }
 }
+
+function otvoriDetaljeClick(id){
+    window.location.href = `http://localhost:3000/detalji.html?id=${id}`;
+}
+
 
 window.onload = loadNekretnine;
 
