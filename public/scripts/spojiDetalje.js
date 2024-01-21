@@ -45,7 +45,7 @@ function loadDetalji(){
     });
 }
 
-window.onload = loadDetalji;
+window.addEventListener('load', loadDetalji);
 
 
 
